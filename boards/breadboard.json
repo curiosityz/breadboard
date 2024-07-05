@@ -1,0 +1,288 @@
+{
+    "title": "Non-Fiction Editing Team",
+    "description": "This breadboard defines a team of specialized agents for editing non-fiction works, ensuring they are accurate, engaging, and impactful.",
+    "version": "0.0.1",
+    "edges": [
+      {"from": "input-1", "to": "audienceAdvocate", "out": "text", "in": "text"},
+      {"from": "input-1", "to": "marketAnalyst", "out": "text", "in": "text"},
+      {"from": "audienceAdvocate", "to": "structuralArchitect", "out": "text", "in": "text"},
+      {"from": "audienceAdvocate", "to": "grammarGuru", "out": "text", "in": "text"},
+      {"from": "structuralArchitect", "to": "logician", "out": "text", "in": "text"},
+      {"from": "structuralArchitect", "to": "grammarGuru", "out": "text", "in": "text"},
+      {"from": "logician", "to": "factChecker", "out": "text", "in": "text"},
+      {"from": "logician", "to": "grammarGuru", "out": "text", "in": "text"},
+      {"from": "factChecker", "to": "creativityCatalyst", "out": "text", "in": "text"},
+      {"from": "factChecker", "to": "grammarGuru", "out": "text", "in": "text"},
+      {"from": "creativityCatalyst", "to": "visualDesigner", "out": "text", "in": "text"},
+      {"from": "creativityCatalyst", "to": "contentStrategist", "out": "text", "in": "text"},
+      {"from": "creativityCatalyst", "to": "grammarGuru", "out": "text", "in": "text"},
+      {"from": "grammarGuru", "to": "output-1", "out": "text", "in": "text"},
+      {"from": "marketAnalyst", "to": "contentStrategist", "out": "text", "in": "text"}
+    ],
+    "nodes": [
+      {
+        "id": "input-1",
+        "type": "input",
+        "configuration": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "title": "Non-Fiction Text",
+                "description": "The text of the non-fiction work to be edited",
+                "format": "multiline"
+              }
+            },
+            "required": ["text"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 55,
+            "y": 169,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "output-1",
+        "type": "output",
+        "configuration": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "title": "Edited Text",
+                "description": "The edited version of the non-fiction text"
+              }
+            }
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 1227,
+            "y": 197,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "audienceAdvocate",
+        "type": "structuredWorker",
+        "configuration": {
+          "context": [],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "feedback": {
+                "type": "string",
+                "description": "Feedback on the text's suitability for the target audience"
+              }
+            },
+            "required": ["feedback"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 265,
+            "y": 178,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "structuralArchitect",
+        "type": "structuredWorker",
+        "configuration": {
+          "context": [],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "feedback": {
+                "type": "string",
+                "description": "Feedback on the text's structure, flow, and organization"
+              }
+            },
+            "required": ["feedback"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 491,
+            "y": 178,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "logician",
+        "type": "structuredWorker",
+        "configuration": {
+          "context": [],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "feedback": {
+                "type": "string",
+                "description": "Feedback on the text's logic, arguments, and evidence"
+              }
+            },
+            "required": ["feedback"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 717,
+            "y": 178,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "factChecker",
+        "type": "structuredWorker",
+        "configuration": {
+          "context": [],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "feedback": {
+                "type": "string",
+                "description": "Feedback on the text's factual accuracy and citations"
+              }
+            },
+            "required": ["feedback"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 943,
+            "y": 178,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "creativityCatalyst",
+        "type": "structuredWorker",
+        "configuration": {
+          "context": [],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "feedback": {
+                "type": "string",
+                "description": "Feedback on the text's originality, engagement, and storytelling"
+              }
+            },
+            "required": ["feedback"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 1169,
+            "y": 178,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "grammarGuru",
+        "type": "structuredWorker",
+        "configuration": {
+          "context": [],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "feedback": {
+                "type": "string",
+                "description": "Feedback on the text's grammar, punctuation, spelling, and style"
+              }
+            },
+            "required": ["feedback"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 1404,
+            "y": 143,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "marketAnalyst",
+        "type": "structuredWorker",
+        "configuration": {
+          "context": [],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "feedback": {
+                "type": "string",
+                "description": "Feedback on the text's market potential and audience appeal"
+              }
+            },
+            "required": ["feedback"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 122,
+            "y": 326,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "visualDesigner",
+        "type": "structuredWorker",
+        "configuration": {
+          "context": [],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "feedback": {
+                "type": "string",
+                "description": "Feedback on the text's visual design and the use of illustrations, graphs, and images"
+              }
+            },
+            "required": ["feedback"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 1169,
+            "y": 316,
+            "collapsed": true
+          }
+        }
+      },
+      {
+        "id": "contentStrategist",
+        "type": "structuredWorker",
+        "configuration": {
+          "context": [],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "feedback": {
+                "type": "string",
+                "description": "Feedback on the text's content strategy, including its balance of depth and accessibility"
+              }
+            },
+            "required": ["feedback"]
+          }
+        },
+        "metadata": {
+          "visual": {
+            "x": 1020,
+            "y": 350,
+            "collapsed": true
+          }
+        }
+      }
+    ]
+  }

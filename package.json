@@ -175,6 +175,7 @@
   },
   "dependencies": {
     "@google-labs/core-kit": "^0.10.1",
+    "breadboard": "^9.0.3",
     "json-schema": "^0.4.0",
     "litegraph.js": "^0.7.18",
     "prettier": "^3.3.2"
