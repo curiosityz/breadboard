@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Pipeline UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .input-group button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .input-group button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Pipeline UI</h1>
+        <div class="input-group">
+            <label for="inputText">Input Text:</label>
+            <textarea id="inputText" rows="5"></textarea>
+        </div>
+        <div class="input-group">
+            <button id="runPipeline">Run Pipeline</button>
+        </div>
+        <div class="output" id="outputText"></div>
+    </div>
+    <script>
+        document.getElementById('runPipeline').addEventListener('click', async () => {
+            const inputText = document.getElementById('inputText').value;
+            const response = await fetch('boards/breadboard.json');
+            const pipeline = await response.json();
+
+            // Simulate running the pipeline
+            const outputText = `Processed: ${inputText}`;
+            document.getElementById('outputText').innerText = outputText;
+        });
+    </script>
+</body>
+</html>

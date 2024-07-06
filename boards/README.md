@@ -32,6 +32,19 @@ To run from the UI:
 breadboard debug boards/<board-name>
 ```
 
+## Accessing and Using the Agentic Pipeline through the HTML UI
+
+To access and use the agentic pipeline defined in `boards/breadboard.json` through the new HTML UI, follow these steps:
+
+1. Open the `index.html` file in your web browser.
+2. Enter the non-fiction text you want to edit in the "Input Text" field.
+3. Click the "Run Pipeline" button to process the text through the agentic pipeline.
+4. The processed text will be displayed in the "Output" section.
+
+## Interacting with the Pipeline
+
+The HTML UI provides input fields and buttons to interact with the agentic pipeline. You can enter the text you want to process in the "Input Text" field and click the "Run Pipeline" button to start the processing. The output will be displayed in the "Output" section.
+
 ## Creating a new Board
 
 To create a new board, create a new directory in this directory. The name of the directory should be the name of the board and should contain a `README.md` file that describes the board and a TypeScript file that contains the code for the board.
